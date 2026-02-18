@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Getting Started with Redux:
+
+### 1. write the initialState and reducer just like in useReducer hook convention.
+
+### 2. create the redux store by `createStore()` redux function.
+
+### 3. call an action by `store.dispatch()` .
+
+### 4. access the updated states with `store.getState()`
