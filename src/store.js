@@ -1,11 +1,16 @@
-import { createStore } from 'redux';
-const initialState = {
+import { combineReducers, createStore } from 'redux';
+const initialStateAccount = {
 	balance: 0,
 	loan: 0,
 	loanPurpose: '',
 };
+const initialStateCustomer = {
+	fullName: '',
+	nationalId: '',
+	createdAt: '',
+};
 
-function reducer(state = initialState, action) {
+function AccountReducer(state = initialStateAccount, action) {
 	switch (action.type) {
 		case 'account/deposit':
 			return { ...state, balance: state.balance + action.payload };
@@ -31,7 +36,25 @@ function reducer(state = initialState, action) {
 	}
 }
 
-const store = createStore(reducer);
+function CustomerReducer(state = initialStateCustomer, action) {
+	switch (action.type) {
+		case 'customer/createAccount':
+			return {
+				...state,
+				fullName: action.payload.fullName,
+				nationalId: action.payload.nationalId,
+				createdAt: action.payload.createdAt,
+			};
+		case 'customer/updateName':
+			return { ...state, fullName: action.payload };
+		default:
+			return state;
+	}
+}
+
+const rootReducer = combineReducers({ AccountReducer, CustomerReducer });
+
+const store = createStore(rootReducer);
 
 //! Using Action Creators for dispatch an action
 
@@ -47,7 +70,7 @@ function requestLoan(amount, purpose) {
 		payload: { amount: amount, purpose: purpose },
 	};
 }
-function payload() {
+function payLoan() {
 	return { type: 'account/payLoan' };
 }
 
@@ -57,5 +80,20 @@ store.dispatch(withdraw(50));
 console.log(store.getState());
 store.dispatch(requestLoan(1000, 'Cow Pussy'));
 console.log(store.getState());
-store.dispatch(payload());
+store.dispatch(payLoan());
 console.log(store.getState());
+
+function createAccount(fullName, nationalId) {
+	return {
+		type: 'customer/createAccount',
+		payload: { fullName, nationalId, createdAt: new Date().toISOString() },
+	};
+}
+
+function updateName(fullName) {
+	return { type: 'customer/updateName', payload: fullName };
+}
+
+store.dispatch(createAccount('Masein', '3080384660'));
+console.log(store.getState());
+store.dispatch(updateName('Mohammad Hosein'));
