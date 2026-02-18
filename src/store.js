@@ -32,10 +32,30 @@ function reducer(state = initialState, action) {
 }
 
 const store = createStore(reducer);
-store.dispatch({ type: 'account/deposit', payload: 500 });
+
+//! Using Action Creators for dispatch an action
+
+function deposit(amount) {
+	return { type: 'account/deposit', payload: amount };
+}
+function withdraw(amount) {
+	return { type: 'account/withdraw', payload: amount };
+}
+function requestLoan(amount, purpose) {
+	return {
+		type: 'account/requestLoan',
+		payload: { amount: amount, purpose: purpose },
+	};
+}
+function payload() {
+	return { type: 'account/payLoan' };
+}
+
+store.dispatch(deposit(500));
 console.log(store.getState());
-store.dispatch({
-	type: 'account/requestLoan',
-	payload: { amount: 1000, purpose: 'fucking a slut.' },
-});
+store.dispatch(withdraw(50));
+console.log(store.getState());
+store.dispatch(requestLoan(1000, 'Cow Pussy'));
+console.log(store.getState());
+store.dispatch(payload());
 console.log(store.getState());
