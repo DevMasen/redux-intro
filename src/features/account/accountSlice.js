@@ -8,7 +8,7 @@ const initialState = {
 };
 
 //! Modern Redux Slice
-const AccountSlice = createSlice({
+const accountSlice = createSlice({
 	name: 'account',
 	initialState,
 	reducers: {
@@ -39,8 +39,8 @@ const AccountSlice = createSlice({
 	},
 });
 
-export const { deposit, withdraw, requestLoan, payLoan } = AccountSlice.actions;
-export default AccountSlice.reducer;
+export const { deposit, withdraw, requestLoan, payLoan } = accountSlice.actions;
+export default accountSlice.reducer;
 
 //! Classic Redux Slice
 // export default function AccountReducer(state = initialStateAccount, action) {

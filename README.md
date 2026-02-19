@@ -104,6 +104,8 @@ const store = createStore(
 npm i @reduxjs/toolkit
 ```
 
+### Redux Store:
+
 ```js
 import { confugureStore } from '@reduxjs/toolkit';
 import customReducer from './features/custom/customSlice';
@@ -113,4 +115,36 @@ const store = configureStore({
 	},
 });
 export default store;
+```
+
+### Redux Slice:
+
+```js
+import { createSlice } from '@reduxjs/toolkit';
+const initialState = {
+	state1: initValue1,
+	state2: initValue2,
+	state3: initValue3,
+};
+const customSlice = createSlice({
+	name: custom,
+	initialState,
+	reducers: {
+		action1(state, action) {
+			// update state
+		},
+		action2: {
+			prepare(input1, input2) {
+				return {
+					payload: { input1, input2 },
+				};
+			},
+			reducer(state, action) {
+				// update state
+			},
+		},
+	},
+});
+export const { action1, action2 } = customSlice.actions;
+export default customSlice.reducer;
 ```

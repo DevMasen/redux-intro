@@ -6,7 +6,7 @@ const initialState = {
 	createdAt: '',
 };
 
-const CustomerSlice = createSlice({
+const customerSlice = createSlice({
 	name: 'customer',
 	initialState,
 	reducers: {
@@ -28,5 +28,5 @@ const CustomerSlice = createSlice({
 	},
 });
 
-export const { createAccount, updateName } = CustomerSlice.actions;
-export default CustomerSlice.reducer;
+export const { createAccount, updateName } = customerSlice.actions;
+export default customerSlice.reducer;
