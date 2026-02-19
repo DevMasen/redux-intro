@@ -71,9 +71,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ---
 
-# Getting Started with Redux:
+# Getting Started with Classic Redux:
 
-```powershell
+```cmd
 npm i redux react-redux redux-thunk redux-devtools-extension
 ```
 
@@ -96,4 +96,21 @@ const store = createStore(
 	rootReducer,
 	composeWithDevTools(applyMiddleware(thunk)),
 );
+```
+
+# Getting Started with Redux Toolkit:
+
+```cmd
+npm i @reduxjs/toolkit
+```
+
+```js
+import { confugureStore } from '@reduxjs/toolkit';
+import customReducer from './features/custom/customSlice';
+const store = configureStore({
+	reducer: {
+		custom: customReducer,
+	},
+});
+export default store;
 ```
