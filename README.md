@@ -155,3 +155,5 @@ export function action3(input1, input2) {
 ```
 
 ### Note: for `Async Actions` we should add a `Custom Action Creator` and and make API calls (or any other Async Action) over there and dispatch the name/action manually.
+
+### Note : We should NEVER make a side effect(like Date Javascript Object) in reducers.
