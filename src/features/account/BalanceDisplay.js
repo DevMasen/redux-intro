@@ -7,6 +7,7 @@ function formatCurrency(value) {
 	}).format(value);
 }
 
+// function BalanceDisplay({ balance }) {
 function BalanceDisplay() {
 	const { balance } = useSelector(store => store.account);
 
@@ -14,3 +15,13 @@ function BalanceDisplay() {
 }
 
 export default BalanceDisplay;
+
+//! The old way of access to store
+
+// function mapStateToProp(state) {
+// 	return {
+// 		balance: state.account.balance,
+// 	};
+// }
+
+// export default connect(mapStateToProp)(BalanceDisplay);
