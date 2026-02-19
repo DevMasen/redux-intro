@@ -73,6 +73,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 # Getting Started with Redux:
 
+```powershell
+npm i redux react-redux redux-thunk
+```
+
 ### 1. Write the initialState, reducer and action creators in a Slice.
 
 ### 2. Create the redux store by `createStore(rootReducer)` and combine reducers in rootReducer with `combineReducers` redux functions.
