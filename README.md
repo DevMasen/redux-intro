@@ -147,4 +147,11 @@ const customSlice = createSlice({
 });
 export const { action1, action2 } = customSlice.actions;
 export default customSlice.reducer;
+
+// Async Action
+export function action3(input1, input2) {
+	return async function (dispatch, getStore) {};
+}
 ```
+
+### Note: for `Async Actions` we should add a `Custom Action Creator` and and make API calls (or any other Async Action) over there and dispatch the name/action manually.

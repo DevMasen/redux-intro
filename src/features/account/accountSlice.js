@@ -49,7 +49,7 @@ export default accountSlice.reducer;
 //! We shoule use custom Action Creator for Async Actions
 export function deposit(amount, currency) {
 	if (currency === 'USD') return { type: 'account/deposit', payload: amount };
-	return async function (dispatch, _) {
+	return async function (dispatch, getStore) {
 		dispatch({ type: 'account/converting' });
 		try {
 			const res = await fetch(
