@@ -74,7 +74,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 # Getting Started with Redux:
 
 ```powershell
-npm i redux react-redux redux-thunk
+npm i redux react-redux redux-thunk redux-devtools-extension
 ```
 
 ### 1. Write the initialState, reducer and action creators in a Slice.
@@ -86,3 +86,14 @@ npm i redux react-redux redux-thunk
 ### 5. Access the store with `useSelector(store=>store.feature)` every where in the application
 
 ### 6. We can access dispatch and dispatch an action by `useDispatch(actionCreator())` hook.
+
+### 7. Setup thunk and redux-devtools in redux store:
+
+```js
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from '@redux-devtools/extension';
+const store = createStore(
+	rootReducer,
+	composeWithDevTools(applyMiddleware(thunk)),
+);
+```
