@@ -13,9 +13,9 @@ function AccountOperations() {
 	const [isNotEffort, setIsNotEffort] = useState(false);
 
 	const {
+		balance,
 		loan: currentLoan,
 		loanPurpose: currentLoanPurpose,
-		balance,
 		isLoading,
 	} = useSelector(store => store.account);
 	const dispatch = useDispatch();
