@@ -67,7 +67,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+---
 
 # Getting Started with Redux:
 
@@ -78,3 +80,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### 4. Install `react-redux` and Create a Provider in root of project and pass the store to the Provider.
 
 ### 5. Access the store with `useSelector(store=>store.feature)` every where in the application
+
+### 6. We can access dispatch and dispatch an action by `useDispatch(actionCreator())` hook.
