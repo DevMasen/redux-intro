@@ -71,10 +71,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 # Getting Started with Redux:
 
-### 1. write the initialState and reducer just like in useReducer hook convention.
+### 1. Write the initialState, reducer and action creators in a Slice.
 
-### 2. create the redux store by `createStore()` redux function.
+### 2. Create the redux store by `createStore(rootReducer)` and combine reducers in rootReducer with `combineReducers` redux functions.
 
-### 3. call an action by `store.dispatch()` .
+### 4. Install `react-redux` and Create a Provider in root of project and pass the store to the Provider.
 
-### 4. access the updated states with `store.getState()`
+### 5. Access the store with `useSelector(store=>store.feature)` every where in the application
