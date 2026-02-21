@@ -1,3 +1,16 @@
+<h1 align="center"> Redux Intro ⚛️</h1>
+<p align="center">
+<img align="center" width="720px" src="./public/banner.png" alt="Banner Image">
+</p>
+
+# A React/Redux small project to handle bank operations 🧐
+
+## A Project by `Jonas Schmedtmann` - React Ultimate Course
+
+## See Project DEMO on 👉[ThisURL](https://devmasen-redux-intro.netlify.app/)👈
+
+## Thanks for visiting my GitHub 🫡♥️
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
